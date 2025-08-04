@@ -12,8 +12,19 @@ matplotlib.use('Tkagg')
 
 
 def calculate_asean_countries_population_in_2014():
-    
-    asean_countries_population_2014 = {"Brunei Darussalam": "", "Cambodia" : "", "Indonesia" : "", "Lao PDR" : "", "Malaysia" : "", "Myanmar" : "", "Philippines" : "", "Singapore" : "", "Thailand" : "", "VietNam" : ""}
+    """
+    Calculates the population of each ASEAN country for the year 2014.
+
+    Reads population data from the specified CSV file and extracts the population
+    numbers of the ASEAN countries for the year 2014.
+
+    Returns:
+        dict: A dictionary where the keys are ASEAN country names and values are
+        the population figures (as strings) for 2014.
+    """
+    asean_countries_population_2014 = {"Brunei Darussalam": "",
+    "Cambodia" : "", "Indonesia" : "", "Lao PDR" : "", "Malaysia" : "",
+    "Myanmar" : "", "Philippines" : "", "Singapore" : "", "Thailand" : "", "VietNam" : ""}
 
     with open("../required_data/country_pop.csv", encoding="utf-8") as country_file:
         country_data = csv.DictReader(country_file)
@@ -28,8 +39,15 @@ def calculate_asean_countries_population_in_2014():
 
     return asean_countries_population_2014
 
+
 def plot_asean_countries_population_in_2014(asean_countries_population):
-    
+    """
+    Plots a bar chart of the population of ASEAN countries in 2014.
+
+    Args:
+        asean_countries_population (dict): A dictionary with ASEAN country names as keys
+            and their population as values for the year 2014.
+    """
     plt.figure(figsize=(14,6))
     plt.title("ASEAN Countries Population In 2014")
     plt.bar(asean_countries_population.keys(), asean_countries_population.values(), color="blue")
@@ -41,9 +59,12 @@ def plot_asean_countries_population_in_2014(asean_countries_population):
 
 
 def execute():
+    """
+    Executes the program workflow: calculates and plots ASEAN country populations for 2014.
 
+    Calls functions to calculate ASEAN populations and display the results in a bar chart.
+    """
     asean_countries_population = calculate_asean_countries_population_in_2014()
-    # print(asean_countries_population)
     plot_asean_countries_population_in_2014(asean_countries_population)
 
 
