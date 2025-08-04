@@ -24,7 +24,7 @@ def calculate_asean_countries_population_in_2014():
     """
     asean_countries_population_2014 = {"Brunei Darussalam": "",
     "Cambodia" : "", "Indonesia" : "", "Lao PDR" : "", "Malaysia" : "",
-    "Myanmar" : "", "Philippines" : "", "Singapore" : "", "Thailand" : "", "VietNam" : ""}
+    "Myanmar" : "", "Philippines" : "", "Singapore" : "", "Thailand" : "", "Vietnam" : ""}
 
     with open("../required_data/country_pop.csv", encoding="utf-8") as country_file:
         country_data = csv.DictReader(country_file)
